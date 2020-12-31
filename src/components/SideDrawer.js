@@ -65,11 +65,9 @@ const SideDrawer = ({navLinks}) => {
         anchor="right"
         open={state.right}
         onOpen={toggleDrawer("right", true)}
-        onClose={toggleDrawer("right", false)}
-        
-      >
-  {sideDrawerList("right")}
-</Drawer>
+        onClose={toggleDrawer("right", false)}>
+        {sideDrawerList("right")}
+      </Drawer>
     </React.Fragment>
   )
 }

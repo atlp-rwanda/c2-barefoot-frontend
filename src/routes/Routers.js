@@ -5,9 +5,10 @@ import Signup from '../components/views/Signup';
 import Landing from '../components/views/LandingPage'
 import PageNotFound from '../components/views/PageNotFound'
 import Profile from '../components/views/Profile';
+import adminHome from '../components/views/Admin/Home'
 import { Switch, Redirect } from 'react-router-dom';
 import RouteWithLayout  from '../components/RouteWithLayout';
-import {  DefaultLayout } from '../components/layouts';
+import {  DefaultLayout, AdminLayout } from '../components/layouts';
 const Routes = () => {
     return (
       <Switch>
@@ -39,6 +40,12 @@ const Routes = () => {
           exact
           layout={DefaultLayout}
           path="/profile"
+        />
+        <RouteWithLayout
+          component={adminHome}
+          exact
+          layout={AdminLayout}
+          path="/adminHome"
         />
         <RouteWithLayout
           component={PageNotFound}
