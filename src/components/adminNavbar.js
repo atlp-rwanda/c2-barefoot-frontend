@@ -1,16 +1,21 @@
 import React from 'react'
-import { AppBar, Toolbar, Button, makeStyles, List, Container, Typography} from '@material-ui/core'
+import { AppBar, Toolbar, Button, makeStyles, List, Box, Typography} from '@material-ui/core'
 import AdminDrawer from './adminDrawer'
 
 const useStyles = makeStyles(theme => ({
     navDisplay: {
         display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center'
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        width: '100%'
     },
     logo: {
         textDecorationLine: 'none',
         color: 'inherit'
+    },
+    innerBox: {
+        display: 'flex',
+        alignItems: 'center'
     }
   }))
 
@@ -22,15 +27,16 @@ function Header (){
     const displayDesktop = () => {
     return (
         <Toolbar>
-            <Container maxWidth='lg' className={classes.navDisplay}>
-
-              <AdminDrawer/>
-
-                {barefootLogo}
+            <Box  className={classes.navDisplay}>
+                <Box className={classes.innerBox}>
+                    <AdminDrawer/>
+                    {barefootLogo}
+                </Box>
+              
                     <List component='nav'>
                         <Button href="/login" color='inherit'>Logout</Button>
                     </List>
-            </Container>
+            </Box>
         </Toolbar>
         )
     }

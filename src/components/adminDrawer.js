@@ -4,7 +4,7 @@ import { PlusOne, Home, People, Delete, Settings, Menu, AccountCircle } from '@m
 import { Link } from 'react-router-dom'
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   list: {
     width: 250,
   },
@@ -22,20 +22,24 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'space-evenly',
     height: 80
-    
-    
+  },
+  paper: {
+    backgroundColor: '#EAF4FB'
+  },
+  listIcons: {
+    color: theme.palette.primary.main,
   }
-});
-
-const firstLinks = [
-  {title: 'Home', path: '/adminHome', icon: <Home/>},
-  {title: 'Create Roles', path: '/roles', icon: <PlusOne/>},
-  {title: 'Set permissions', path:'/permissions', icon: <Settings/>}
-]
+}));
 
 export default function TemporaryDrawer() {
   const classes = useStyles();
   const [state, setState] = useState({left: false});
+
+  const firstLinks = [
+    {title: 'Home', path: '/adminHome', icon: <Home className={classes.listIcons}/>},
+    {title: 'Create Roles', path: '/roles', icon: <PlusOne className={classes.listIcons}/>},
+    {title: 'Set permissions', path:'/permissions', icon: <Settings className={classes.listIcons} />}
+  ]
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -53,8 +57,8 @@ export default function TemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <Box className={classes.accountInfo}>
-        <Avatar>
-          <AccountCircle fontSize='large'/>
+        <Avatar className={classes.paper}>
+          <AccountCircle fontSize='large' className={classes.listIcons}/>
         </Avatar>
         <Typography>Admin Name</Typography>
       </Box>
@@ -73,7 +77,7 @@ export default function TemporaryDrawer() {
       <List>
         <Link to='/users' key='List users' className={classes.linkText}>
           <ListItem button>
-            <ListItemIcon> <People/> </ListItemIcon>
+            <ListItemIcon> <People className={classes.listIcons}/> </ListItemIcon>
             <ListItemText primary= 'List users' />
           </ListItem>
         </Link>
@@ -82,7 +86,7 @@ export default function TemporaryDrawer() {
       <List>
         <Link to='/trash' key='Trash' className={classes.linkText}>
           <ListItem button>
-            <ListItemIcon> <Delete/> </ListItemIcon>
+            <ListItemIcon> <Delete className={classes.listIcons}/> </ListItemIcon>
             <ListItemText primary= 'Trash' />
           </ListItem>
         </Link>
@@ -98,6 +102,7 @@ export default function TemporaryDrawer() {
             <Menu fontSize='large' className = {classes.menuIcon} />
           </IconButton>
           <Drawer 
+            classes = {{paper: classes.paper}}
             anchor='left' 
             open={state.left} 
             onOpen={toggleDrawer('left', true)}

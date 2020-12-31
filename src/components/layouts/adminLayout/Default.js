@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-
 import AdminNavBar from '../../adminNavbar'
-
+import Footer from '../../Footer'
 
 
 const useStyles = makeStyles(() => ({
   
   content: {
-    height: '100%'
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
   }
 }));
 
@@ -19,9 +20,10 @@ const DefaultM = props => {
   return (
     <div >
       <AdminNavBar/>
-      <main className={classes.content}>{children}
-      
+      <main className={classes.content}>
+        {children}
       </main>
+      <Footer/>
     </div>
   );
 };
