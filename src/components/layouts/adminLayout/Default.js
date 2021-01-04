@@ -5,8 +5,8 @@ import AdminNavBar from '../../adminNavbar'
 import Footer from '../../Footer'
 
 
-const useStyles = makeStyles(() => ({
-  
+const useStyles = makeStyles((theme) => ({
+  toolbar: theme.mixins.toolbar,
   content: {
     height: '100vh',
     display: 'flex',
@@ -20,6 +20,7 @@ const DefaultM = props => {
   return (
     <div >
       <AdminNavBar/>
+      <div className={classes.toolbar} />
       <main className={classes.content}>
         {children}
       </main>

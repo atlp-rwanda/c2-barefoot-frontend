@@ -5,7 +5,9 @@ import Signup from '../components/views/Signup';
 import Landing from '../components/views/LandingPage'
 import PageNotFound from '../components/views/PageNotFound'
 import Profile from '../components/views/Profile';
-import adminHome from '../components/views/Admin/Home'
+import adminHome from '../components/views/Admin/Home';
+import CreateRoles from '../components/views/Admin/CreateRoles';
+import SetPermissions from '../components/views/Admin/SetPermissions'
 import { Switch, Redirect } from 'react-router-dom';
 import RouteWithLayout  from '../components/RouteWithLayout';
 import {  DefaultLayout, AdminLayout } from '../components/layouts';
@@ -46,6 +48,18 @@ const Routes = () => {
           exact
           layout={AdminLayout}
           path="/adminHome"
+        />
+        <RouteWithLayout
+          component = {CreateRoles}
+          exact
+          layout={AdminLayout}
+          path="/roles"
+        />
+        <RouteWithLayout
+          component={SetPermissions}
+          exact
+          layout={AdminLayout}
+          path="/permissions"
         />
         <RouteWithLayout
           component={PageNotFound}

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Typography, makeStyles, Box, Divider, List, ListItem} from '@material-ui/core'
+import {Typography, makeStyles, Box, Divider, Grid, Container} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root:{
@@ -8,7 +8,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    justifyContent: 'space-around'
+    justifyContent: 'space-between',
+    color: theme.palette.primary.main,
+
   },
   introduction: {
     color: theme.palette.primary.main,
@@ -16,53 +18,48 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center'
   },
-  systemData:{
-    width: '50%',
-    display: 'flex',
-    justifyContent:'center',
-    alignItems: 'center',
-    alignContent: 'center',
-    color: theme.palette.primary.main,
-
-  }
-  
 }));
 
 function Home () {
   const classes = useStyles()
   return(
-    <Box className={classes.root}>
+    <Container className={classes.root}>
 
       <Box className={classes.introduction}>
         <Typography variant='subtitle1'>Welcome back Administrator!</Typography>
         <Typography variant='subtitle1'>This is how your system looks like so far</Typography>
       </Box>
-      <List className={classes.systemData} spacing={3}>
-        <ListItem>
+      <Grid 
+        container 
+        spacing={6}
+        direction='row'
+        justify='center'
+        alignItems='center'>
+        <Grid item xs={4} sm={4} md={2}>
           <Typography>
             0 Roles
           </Typography>
-        </ListItem>
+        </Grid>
         <Divider orientation='vertical' flexItem />
-        <ListItem>
+        <Grid item xs={4} sm={4} md={2}>
           <Typography>
             0 users
           </Typography>
-        </ListItem>
+        </Grid>
         <Divider orientation='vertical' flexItem />
-        <ListItem>
+        <Grid item xs={4} sm={4} md={2}>
           <Typography>
             0 Locations
           </Typography>
-        </ListItem>
+        </Grid>
         <Divider orientation='vertical' flexItem />
-        <ListItem>
+        <Grid item xs={4} sm={4} md={2}>
           <Typography>
             0 Accommodations
           </Typography>
-        </ListItem>
-      </List>
-    </Box>  
+        </Grid>
+      </Grid>
+    </Container>  
     
     
   )
