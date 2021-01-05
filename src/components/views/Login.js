@@ -192,7 +192,7 @@ function Login(props) {
                             variant="contained"
                             disabled={load}
                             className={classes.social_media}
-                            startIcon={<Avatar src={'../src/images/facebook.png'}/>}
+                            startIcon={<Avatar className={classes.image_icon} src={'https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609406918/images/facebook_cdieom.svg'}/>}
                             >
                             Facebook
                             </Button>
@@ -201,7 +201,7 @@ function Login(props) {
                             variant="contained"
                             disabled={load}
                             className={classes.social_media}
-                            startIcon={<Avatar className={classes.image_icon} src={'../src/images/goo.png'}/>}
+                            startIcon={<Avatar className={classes.image_icon} src={'https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609407032/images/google_gd4tb4.svg'}/>}
                             >
                                 Google
                             </Button>
@@ -227,6 +227,7 @@ function Login(props) {
                         Don't have an account?
                     </Typography>
                     <Button
+                        href="/signup" 
                         type="submit"
                         variant="contained"
                         className={classes.submit}

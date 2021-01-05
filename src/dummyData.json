@@ -1,0 +1,39 @@
+{
+    "locations": [
+      {
+        "city": "capetown",
+        "description": "This is one of best cities in Africa and you can also find good accomodations.",
+        "image": "https://freewalkingtourscapetown.co.za/wp-content/uploads/2018/05/cropped-cape-town-header-pic-1.png"
+      },
+      {
+        "city": "capetown",
+        "description": "This is one of best cities in Africa and you can also find good accomodations.",
+        "image": "https://freewalkingtourscapetown.co.za/wp-content/uploads/2018/05/cropped-cape-town-header-pic-1.png"
+      },
+      {
+        "city": "capetown",
+        "description": "This is one of best cities in Africa and you can also find good accomodations.",
+        "image": "https://freewalkingtourscapetown.co.za/wp-content/uploads/2018/05/cropped-cape-town-header-pic-1.png"
+      }
+    ],
+    "accommodations": [
+      {
+        "title": "Marriott Hotel",
+        "location": "Kigali",
+        "description": "This is one of best cities in Africa and you can also find good accomodations.",
+        "image": "https://cache.marriott.com/marriottassets/marriott/KGLMC/kglmc-exterior-0030-hor-feat.jpg"
+      },
+      {
+        "title": "Serena Hotel",
+        "location": "Kigali",
+        "description": "This is one of best cities in Africa and you can also find good accomodations.",
+        "image": "https://cache.marriott.com/marriottassets/marriott/KGLMC/kglmc-exterior-0030-hor-feat.jpg"
+      },
+      {
+        "title": "Marriott Hotel",
+        "location": "Kigali",
+        "description": "This is one of best cities in Africa and you can also find good accomodations.",
+        "image": "https://cache.marriott.com/marriottassets/marriott/KGLMC/kglmc-exterior-0030-hor-feat.jpg"
+      }
+    ]
+}

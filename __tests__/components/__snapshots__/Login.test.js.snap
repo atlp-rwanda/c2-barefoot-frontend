@@ -3213,171 +3213,8 @@ exports[`<Login /> if it matches snapshot 1`] = `
                                 disabled={false}
                                 startIcon={
                                   <WithStyles(ForwardRef(Avatar))
-                                    src="../src/images/facebook.png"
-                                  />
-                                }
-                                variant="contained"
-                              >
-                                <ForwardRef(Button)
-                                  className="makeStyles-social_media-7"
-                                  classes={
-                                    Object {
-                                      "colorInherit": "MuiButton-colorInherit",
-                                      "contained": "MuiButton-contained",
-                                      "containedPrimary": "MuiButton-containedPrimary",
-                                      "containedSecondary": "MuiButton-containedSecondary",
-                                      "containedSizeLarge": "MuiButton-containedSizeLarge",
-                                      "containedSizeSmall": "MuiButton-containedSizeSmall",
-                                      "disableElevation": "MuiButton-disableElevation",
-                                      "disabled": "Mui-disabled",
-                                      "endIcon": "MuiButton-endIcon",
-                                      "focusVisible": "Mui-focusVisible",
-                                      "fullWidth": "MuiButton-fullWidth",
-                                      "iconSizeLarge": "MuiButton-iconSizeLarge",
-                                      "iconSizeMedium": "MuiButton-iconSizeMedium",
-                                      "iconSizeSmall": "MuiButton-iconSizeSmall",
-                                      "label": "MuiButton-label",
-                                      "outlined": "MuiButton-outlined",
-                                      "outlinedPrimary": "MuiButton-outlinedPrimary",
-                                      "outlinedSecondary": "MuiButton-outlinedSecondary",
-                                      "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
-                                      "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
-                                      "root": "MuiButton-root",
-                                      "sizeLarge": "MuiButton-sizeLarge",
-                                      "sizeSmall": "MuiButton-sizeSmall",
-                                      "startIcon": "MuiButton-startIcon",
-                                      "text": "MuiButton-text",
-                                      "textPrimary": "MuiButton-textPrimary",
-                                      "textSecondary": "MuiButton-textSecondary",
-                                      "textSizeLarge": "MuiButton-textSizeLarge",
-                                      "textSizeSmall": "MuiButton-textSizeSmall",
-                                    }
-                                  }
-                                  disabled={false}
-                                  startIcon={
-                                    <WithStyles(ForwardRef(Avatar))
-                                      src="../src/images/facebook.png"
-                                    />
-                                  }
-                                  variant="contained"
-                                >
-                                  <WithStyles(ForwardRef(ButtonBase))
-                                    className="MuiButton-root MuiButton-contained makeStyles-social_media-7"
-                                    component="button"
-                                    disabled={false}
-                                    focusRipple={true}
-                                    focusVisibleClassName="Mui-focusVisible"
-                                    type="button"
-                                  >
-                                    <ForwardRef(ButtonBase)
-                                      className="MuiButton-root MuiButton-contained makeStyles-social_media-7"
-                                      classes={
-                                        Object {
-                                          "disabled": "Mui-disabled",
-                                          "focusVisible": "Mui-focusVisible",
-                                          "root": "MuiButtonBase-root",
-                                        }
-                                      }
-                                      component="button"
-                                      disabled={false}
-                                      focusRipple={true}
-                                      focusVisibleClassName="Mui-focusVisible"
-                                      type="button"
-                                    >
-                                      <button
-                                        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-social_media-7"
-                                        disabled={false}
-                                        onBlur={[Function]}
-                                        onDragLeave={[Function]}
-                                        onFocus={[Function]}
-                                        onKeyDown={[Function]}
-                                        onKeyUp={[Function]}
-                                        onMouseDown={[Function]}
-                                        onMouseLeave={[Function]}
-                                        onMouseUp={[Function]}
-                                        onTouchEnd={[Function]}
-                                        onTouchMove={[Function]}
-                                        onTouchStart={[Function]}
-                                        tabIndex={0}
-                                        type="button"
-                                      >
-                                        <span
-                                          className="MuiButton-label"
-                                        >
-                                          <span
-                                            className="MuiButton-startIcon MuiButton-iconSizeMedium"
-                                          >
-                                            <WithStyles(ForwardRef(Avatar))
-                                              src="../src/images/facebook.png"
-                                            >
-                                              <ForwardRef(Avatar)
-                                                classes={
-                                                  Object {
-                                                    "circle": "MuiAvatar-circle",
-                                                    "circular": "MuiAvatar-circular",
-                                                    "colorDefault": "MuiAvatar-colorDefault",
-                                                    "fallback": "MuiAvatar-fallback",
-                                                    "img": "MuiAvatar-img",
-                                                    "root": "MuiAvatar-root",
-                                                    "rounded": "MuiAvatar-rounded",
-                                                    "square": "MuiAvatar-square",
-                                                  }
-                                                }
-                                                src="../src/images/facebook.png"
-                                              >
-                                                <div
-                                                  className="MuiAvatar-root MuiAvatar-circle"
-                                                >
-                                                  <img
-                                                    className="MuiAvatar-img"
-                                                    src="../src/images/facebook.png"
-                                                  />
-                                                </div>
-                                              </ForwardRef(Avatar)>
-                                            </WithStyles(ForwardRef(Avatar))>
-                                          </span>
-                                          Facebook
-                                        </span>
-                                        <WithStyles(memo)
-                                          center={false}
-                                        >
-                                          <ForwardRef(TouchRipple)
-                                            center={false}
-                                            classes={
-                                              Object {
-                                                "child": "MuiTouchRipple-child",
-                                                "childLeaving": "MuiTouchRipple-childLeaving",
-                                                "childPulsate": "MuiTouchRipple-childPulsate",
-                                                "ripple": "MuiTouchRipple-ripple",
-                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
-                                                "rippleVisible": "MuiTouchRipple-rippleVisible",
-                                                "root": "MuiTouchRipple-root",
-                                              }
-                                            }
-                                          >
-                                            <span
-                                              className="MuiTouchRipple-root"
-                                            >
-                                              <TransitionGroup
-                                                childFactory={[Function]}
-                                                component={null}
-                                                exit={true}
-                                              />
-                                            </span>
-                                          </ForwardRef(TouchRipple)>
-                                        </WithStyles(memo)>
-                                      </button>
-                                    </ForwardRef(ButtonBase)>
-                                  </WithStyles(ForwardRef(ButtonBase))>
-                                </ForwardRef(Button)>
-                              </WithStyles(ForwardRef(Button))>
-                              <WithStyles(ForwardRef(Button))
-                                className="makeStyles-social_media-7"
-                                disabled={false}
-                                startIcon={
-                                  <WithStyles(ForwardRef(Avatar))
                                     className="makeStyles-image_icon-8"
-                                    src="../src/images/goo.png"
+                                    src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609406918/images/facebook_cdieom.svg"
                                   />
                                 }
                                 variant="contained"
@@ -3421,7 +3258,7 @@ exports[`<Login /> if it matches snapshot 1`] = `
                                   startIcon={
                                     <WithStyles(ForwardRef(Avatar))
                                       className="makeStyles-image_icon-8"
-                                      src="../src/images/goo.png"
+                                      src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609406918/images/facebook_cdieom.svg"
                                     />
                                   }
                                   variant="contained"
@@ -3474,7 +3311,7 @@ exports[`<Login /> if it matches snapshot 1`] = `
                                           >
                                             <WithStyles(ForwardRef(Avatar))
                                               className="makeStyles-image_icon-8"
-                                              src="../src/images/goo.png"
+                                              src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609406918/images/facebook_cdieom.svg"
                                             >
                                               <ForwardRef(Avatar)
                                                 className="makeStyles-image_icon-8"
@@ -3490,14 +3327,181 @@ exports[`<Login /> if it matches snapshot 1`] = `
                                                     "square": "MuiAvatar-square",
                                                   }
                                                 }
-                                                src="../src/images/goo.png"
+                                                src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609406918/images/facebook_cdieom.svg"
                                               >
                                                 <div
                                                   className="MuiAvatar-root MuiAvatar-circle makeStyles-image_icon-8"
                                                 >
                                                   <img
                                                     className="MuiAvatar-img"
-                                                    src="../src/images/goo.png"
+                                                    src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609406918/images/facebook_cdieom.svg"
+                                                  />
+                                                </div>
+                                              </ForwardRef(Avatar)>
+                                            </WithStyles(ForwardRef(Avatar))>
+                                          </span>
+                                          Facebook
+                                        </span>
+                                        <WithStyles(memo)
+                                          center={false}
+                                        >
+                                          <ForwardRef(TouchRipple)
+                                            center={false}
+                                            classes={
+                                              Object {
+                                                "child": "MuiTouchRipple-child",
+                                                "childLeaving": "MuiTouchRipple-childLeaving",
+                                                "childPulsate": "MuiTouchRipple-childPulsate",
+                                                "ripple": "MuiTouchRipple-ripple",
+                                                "ripplePulsate": "MuiTouchRipple-ripplePulsate",
+                                                "rippleVisible": "MuiTouchRipple-rippleVisible",
+                                                "root": "MuiTouchRipple-root",
+                                              }
+                                            }
+                                          >
+                                            <span
+                                              className="MuiTouchRipple-root"
+                                            >
+                                              <TransitionGroup
+                                                childFactory={[Function]}
+                                                component={null}
+                                                exit={true}
+                                              />
+                                            </span>
+                                          </ForwardRef(TouchRipple)>
+                                        </WithStyles(memo)>
+                                      </button>
+                                    </ForwardRef(ButtonBase)>
+                                  </WithStyles(ForwardRef(ButtonBase))>
+                                </ForwardRef(Button)>
+                              </WithStyles(ForwardRef(Button))>
+                              <WithStyles(ForwardRef(Button))
+                                className="makeStyles-social_media-7"
+                                disabled={false}
+                                startIcon={
+                                  <WithStyles(ForwardRef(Avatar))
+                                    className="makeStyles-image_icon-8"
+                                    src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609407032/images/google_gd4tb4.svg"
+                                  />
+                                }
+                                variant="contained"
+                              >
+                                <ForwardRef(Button)
+                                  className="makeStyles-social_media-7"
+                                  classes={
+                                    Object {
+                                      "colorInherit": "MuiButton-colorInherit",
+                                      "contained": "MuiButton-contained",
+                                      "containedPrimary": "MuiButton-containedPrimary",
+                                      "containedSecondary": "MuiButton-containedSecondary",
+                                      "containedSizeLarge": "MuiButton-containedSizeLarge",
+                                      "containedSizeSmall": "MuiButton-containedSizeSmall",
+                                      "disableElevation": "MuiButton-disableElevation",
+                                      "disabled": "Mui-disabled",
+                                      "endIcon": "MuiButton-endIcon",
+                                      "focusVisible": "Mui-focusVisible",
+                                      "fullWidth": "MuiButton-fullWidth",
+                                      "iconSizeLarge": "MuiButton-iconSizeLarge",
+                                      "iconSizeMedium": "MuiButton-iconSizeMedium",
+                                      "iconSizeSmall": "MuiButton-iconSizeSmall",
+                                      "label": "MuiButton-label",
+                                      "outlined": "MuiButton-outlined",
+                                      "outlinedPrimary": "MuiButton-outlinedPrimary",
+                                      "outlinedSecondary": "MuiButton-outlinedSecondary",
+                                      "outlinedSizeLarge": "MuiButton-outlinedSizeLarge",
+                                      "outlinedSizeSmall": "MuiButton-outlinedSizeSmall",
+                                      "root": "MuiButton-root",
+                                      "sizeLarge": "MuiButton-sizeLarge",
+                                      "sizeSmall": "MuiButton-sizeSmall",
+                                      "startIcon": "MuiButton-startIcon",
+                                      "text": "MuiButton-text",
+                                      "textPrimary": "MuiButton-textPrimary",
+                                      "textSecondary": "MuiButton-textSecondary",
+                                      "textSizeLarge": "MuiButton-textSizeLarge",
+                                      "textSizeSmall": "MuiButton-textSizeSmall",
+                                    }
+                                  }
+                                  disabled={false}
+                                  startIcon={
+                                    <WithStyles(ForwardRef(Avatar))
+                                      className="makeStyles-image_icon-8"
+                                      src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609407032/images/google_gd4tb4.svg"
+                                    />
+                                  }
+                                  variant="contained"
+                                >
+                                  <WithStyles(ForwardRef(ButtonBase))
+                                    className="MuiButton-root MuiButton-contained makeStyles-social_media-7"
+                                    component="button"
+                                    disabled={false}
+                                    focusRipple={true}
+                                    focusVisibleClassName="Mui-focusVisible"
+                                    type="button"
+                                  >
+                                    <ForwardRef(ButtonBase)
+                                      className="MuiButton-root MuiButton-contained makeStyles-social_media-7"
+                                      classes={
+                                        Object {
+                                          "disabled": "Mui-disabled",
+                                          "focusVisible": "Mui-focusVisible",
+                                          "root": "MuiButtonBase-root",
+                                        }
+                                      }
+                                      component="button"
+                                      disabled={false}
+                                      focusRipple={true}
+                                      focusVisibleClassName="Mui-focusVisible"
+                                      type="button"
+                                    >
+                                      <button
+                                        className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-social_media-7"
+                                        disabled={false}
+                                        onBlur={[Function]}
+                                        onDragLeave={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        onMouseLeave={[Function]}
+                                        onMouseUp={[Function]}
+                                        onTouchEnd={[Function]}
+                                        onTouchMove={[Function]}
+                                        onTouchStart={[Function]}
+                                        tabIndex={0}
+                                        type="button"
+                                      >
+                                        <span
+                                          className="MuiButton-label"
+                                        >
+                                          <span
+                                            className="MuiButton-startIcon MuiButton-iconSizeMedium"
+                                          >
+                                            <WithStyles(ForwardRef(Avatar))
+                                              className="makeStyles-image_icon-8"
+                                              src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609407032/images/google_gd4tb4.svg"
+                                            >
+                                              <ForwardRef(Avatar)
+                                                className="makeStyles-image_icon-8"
+                                                classes={
+                                                  Object {
+                                                    "circle": "MuiAvatar-circle",
+                                                    "circular": "MuiAvatar-circular",
+                                                    "colorDefault": "MuiAvatar-colorDefault",
+                                                    "fallback": "MuiAvatar-fallback",
+                                                    "img": "MuiAvatar-img",
+                                                    "root": "MuiAvatar-root",
+                                                    "rounded": "MuiAvatar-rounded",
+                                                    "square": "MuiAvatar-square",
+                                                  }
+                                                }
+                                                src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609407032/images/google_gd4tb4.svg"
+                                              >
+                                                <div
+                                                  className="MuiAvatar-root MuiAvatar-circle makeStyles-image_icon-8"
+                                                >
+                                                  <img
+                                                    className="MuiAvatar-img"
+                                                    src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609407032/images/google_gd4tb4.svg"
                                                   />
                                                 </div>
                                               </ForwardRef(Avatar)>
@@ -3959,6 +3963,7 @@ exports[`<Login /> if it matches snapshot 1`] = `
                 <WithStyles(ForwardRef(Button))
                   className="makeStyles-submit-6"
                   disabled={false}
+                  href="/signup"
                   type="submit"
                   variant="contained"
                 >
@@ -3998,6 +4003,7 @@ exports[`<Login /> if it matches snapshot 1`] = `
                       }
                     }
                     disabled={false}
+                    href="/signup"
                     type="submit"
                     variant="contained"
                   >
@@ -4007,6 +4013,7 @@ exports[`<Login /> if it matches snapshot 1`] = `
                       disabled={false}
                       focusRipple={true}
                       focusVisibleClassName="Mui-focusVisible"
+                      href="/signup"
                       type="submit"
                     >
                       <ForwardRef(ButtonBase)
@@ -4022,11 +4029,13 @@ exports[`<Login /> if it matches snapshot 1`] = `
                         disabled={false}
                         focusRipple={true}
                         focusVisibleClassName="Mui-focusVisible"
+                        href="/signup"
                         type="submit"
                       >
-                        <button
+                        <a
+                          aria-disabled={false}
                           className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-submit-6"
-                          disabled={false}
+                          href="/signup"
                           onBlur={[Function]}
                           onDragLeave={[Function]}
                           onFocus={[Function]}
@@ -4039,7 +4048,6 @@ exports[`<Login /> if it matches snapshot 1`] = `
                           onTouchMove={[Function]}
                           onTouchStart={[Function]}
                           tabIndex={0}
-                          type="submit"
                         >
                           <span
                             className="MuiButton-label"
@@ -4074,7 +4082,7 @@ exports[`<Login /> if it matches snapshot 1`] = `
                               </span>
                             </ForwardRef(TouchRipple)>
                           </WithStyles(memo)>
-                        </button>
+                        </a>
                       </ForwardRef(ButtonBase)>
                     </WithStyles(ForwardRef(ButtonBase))>
                   </ForwardRef(Button)>

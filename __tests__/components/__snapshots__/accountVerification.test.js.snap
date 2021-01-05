@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account verifacation Account verification Rendering renders Account varidation correctly 1`] = `
+<verifyAccount>
+  <div
+    className="makeStyles-container-1"
+  >
+    <Styled(MuiBox)
+      className="makeStyles-boxContainer-2"
+    >
+      <div
+        className="MuiBox-root MuiBox-root-6 makeStyles-boxContainer-2"
+      >
+        <Styled(MuiBox)>
+          <div
+            className="MuiBox-root MuiBox-root-7"
+          >
+            <WithStyles(ForwardRef(Skeleton))
+              height={40}
+              variant="text"
+              width={300}
+            >
+              <ForwardRef(Skeleton)
+                classes={
+                  Object {
+                    "circle": "MuiSkeleton-circle",
+                    "fitContent": "MuiSkeleton-fitContent",
+                    "heightAuto": "MuiSkeleton-heightAuto",
+                    "pulse": "MuiSkeleton-pulse",
+                    "rect": "MuiSkeleton-rect",
+                    "root": "MuiSkeleton-root",
+                    "text": "MuiSkeleton-text",
+                    "wave": "MuiSkeleton-wave",
+                    "withChildren": "MuiSkeleton-withChildren",
+                  }
+                }
+                height={40}
+                variant="text"
+                width={300}
+              >
+                <span
+                  className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+                  style={
+                    Object {
+                      "height": 40,
+                      "width": 300,
+                    }
+                  }
+                />
+              </ForwardRef(Skeleton)>
+            </WithStyles(ForwardRef(Skeleton))>
+            <WithStyles(ForwardRef(Skeleton))
+              height={40}
+              variant="text"
+              width={300}
+            >
+              <ForwardRef(Skeleton)
+                classes={
+                  Object {
+                    "circle": "MuiSkeleton-circle",
+                    "fitContent": "MuiSkeleton-fitContent",
+                    "heightAuto": "MuiSkeleton-heightAuto",
+                    "pulse": "MuiSkeleton-pulse",
+                    "rect": "MuiSkeleton-rect",
+                    "root": "MuiSkeleton-root",
+                    "text": "MuiSkeleton-text",
+                    "wave": "MuiSkeleton-wave",
+                    "withChildren": "MuiSkeleton-withChildren",
+                  }
+                }
+                height={40}
+                variant="text"
+                width={300}
+              >
+                <span
+                  className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-pulse"
+                  style={
+                    Object {
+                      "height": 40,
+                      "width": 300,
+                    }
+                  }
+                />
+              </ForwardRef(Skeleton)>
+            </WithStyles(ForwardRef(Skeleton))>
+          </div>
+        </Styled(MuiBox)>
+        <WithStyles(ForwardRef(Skeleton))
+          height={50}
+          style={
+            Object {
+              "marginLeft": "auto",
+              "marginRight": "auto",
+            }
+          }
+          variant="rect"
+          width={70}
+        >
+          <ForwardRef(Skeleton)
+            classes={
+              Object {
+                "circle": "MuiSkeleton-circle",
+                "fitContent": "MuiSkeleton-fitContent",
+                "heightAuto": "MuiSkeleton-heightAuto",
+                "pulse": "MuiSkeleton-pulse",
+                "rect": "MuiSkeleton-rect",
+                "root": "MuiSkeleton-root",
+                "text": "MuiSkeleton-text",
+                "wave": "MuiSkeleton-wave",
+                "withChildren": "MuiSkeleton-withChildren",
+              }
+            }
+            height={50}
+            style={
+              Object {
+                "marginLeft": "auto",
+                "marginRight": "auto",
+              }
+            }
+            variant="rect"
+            width={70}
+          >
+            <span
+              className="MuiSkeleton-root MuiSkeleton-rect MuiSkeleton-pulse"
+              style={
+                Object {
+                  "height": 50,
+                  "marginLeft": "auto",
+                  "marginRight": "auto",
+                  "width": 70,
+                }
+              }
+            />
+          </ForwardRef(Skeleton)>
+        </WithStyles(ForwardRef(Skeleton))>
+      </div>
+    </Styled(MuiBox)>
+  </div>
+</verifyAccount>
+`;
