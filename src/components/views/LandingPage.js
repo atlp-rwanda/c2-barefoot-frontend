@@ -59,7 +59,7 @@ function Landing (props){
         </Typography>
 
         <Grid container spacing={3}>
-          {props.locationsData.pending ? locationSkeleton :props.locationsData.locations.map((location) => (
+          {props.locationsData.pending ? locationSkeleton :props.locationsData.locations.rows.map((location) => (
               <Grid item xs={12} sm={6} md={4} className={classes.paper} key = {location.id}>
                 <LocationCard location={location}/>
               </Grid> 
@@ -75,7 +75,7 @@ function Landing (props){
         </Typography>
 
         <Grid container spacing={3}>
-          {props.accommodationsData.pending ? accommodationSkeleton : props.accommodationsData.accommodations.map((accommodation)=> (
+          {props.accommodationsData.pending ? accommodationSkeleton : props.accommodationsData.accommodations.rows.map((accommodation)=> (
             <Grid item xs={12} sm={6} md={4} className={classes.paper} key = {accommodation.id}>
               <AccommodationCard accommodation={accommodation}/>
             </Grid>

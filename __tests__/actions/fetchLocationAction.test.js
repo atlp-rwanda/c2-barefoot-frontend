@@ -42,11 +42,9 @@ describe('Fetch Location actions', () => {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent()
       request.respondWith({
-       status: 200,
+       status: 500,
        response: {
-          loccations: {
-            rowws: locationsPayload
-          }
+          Error: "Internal server error"
        }
        })
     })

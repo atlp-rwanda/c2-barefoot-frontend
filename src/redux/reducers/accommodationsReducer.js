@@ -1,7 +1,7 @@
 import {FETCH_ACCOMMODATIONS_PENDING, FETCH_ACCOMMODATIONS_SUCCESS, FETCH_ACCOMMODATIONS_ERROR} from '../actions/fetchAccommodations'
 
 const initialState = {
-  pending: false,
+  pending: true,
   accommodations: [],
   error: null
 }

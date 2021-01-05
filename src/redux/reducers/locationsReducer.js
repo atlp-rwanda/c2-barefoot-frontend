@@ -1,7 +1,7 @@
 import {FETCH_LOCATIONS_PENDING, FETCH_LOCATIONS_SUCCESS, FETCH_LOCATIONS_ERROR} from '../actions/fetchLocationsAction'
 
 const initialState = {
-  pending: false,
+  pending: true,
   locations: [],
   error: null
 }

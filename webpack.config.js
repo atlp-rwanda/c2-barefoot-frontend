@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, "/build"),
         filename: 'bundle.js',
-        publicPath: './'
+        publicPath: '/'
     },
     mode:  process.env.NODE_ENV || 'development',
     devServer: {
@@ -19,7 +19,7 @@ module.exports = {
         clientLogLevel: 'silent',
         inline: true,
         open: true,
-        port: process.env.PORT,
+        port: 3000,
         hot: true,
       },
     module : {

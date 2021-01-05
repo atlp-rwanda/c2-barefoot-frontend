@@ -6,14 +6,11 @@ export const FETCH_LOCATIONS_ERROR = 'FETCH_LOCATIONS_ERROR'
 
 
 export const getLocations = () => dispatch => {
-  dispatch({
-    type: FETCH_LOCATIONS_PENDING
-  })
   return axios.get(`${process.env.REACT_APP_BACKEND_LINK}/locations`)
     .then(res => {
       dispatch({
         type: FETCH_LOCATIONS_SUCCESS,
-        payload: res.data.locations.rows
+        payload: res.data.locations
       })
       }
     )
