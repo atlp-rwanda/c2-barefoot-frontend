@@ -32,8 +32,7 @@ describe('Fetch accommodations actions', () => {
 
     return store.dispatch(actions.getAccommodations()).then(() => {
       const expectedActions = store.getActions();
-      expect(expectedActions[0].type).toEqual('FETCH_ACCOMMODATIONS_PENDING')
-      expect(expectedActions[1].type).toEqual('FETCH_ACCOMMODATIONS_SUCCESS')
+      expect(expectedActions[0].type).toEqual('FETCH_ACCOMMODATIONS_SUCCESS')
     })
   })
 
@@ -52,8 +51,7 @@ describe('Fetch accommodations actions', () => {
 
     return store.dispatch(actions.getAccommodations()).then(() => {
       const expectedActions = store.getActions();
-      expect(expectedActions[0].type).toEqual('FETCH_ACCOMMODATIONS_PENDING')
-      expect(expectedActions[1].type).toEqual('FETCH_ACCOMMODATIONS_ERROR')
+      expect(expectedActions[0].type).toEqual('FETCH_ACCOMMODATIONS_ERROR')
     })
   })
 

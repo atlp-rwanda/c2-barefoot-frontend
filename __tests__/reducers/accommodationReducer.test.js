@@ -7,25 +7,13 @@ describe('Fetch accommodations reducer', () => {
   it('Should get initial state', () => {
     expect(fetchAccommodationsReducer(undefined, {})).toEqual(
       {
-        pending: false,
+        pending: true,
         accommodations: [],
         error: null
       }
     )
     })
 
-  it('Should handle FETCH_ACCOMMODATIONS_PENDING', () => {
-    expect(fetchAccommodationsReducer(undefined, {
-      type: types.FETCH_ACCOMMODATIONS_PENDING
-    })
-    ).toEqual(
-      {
-        pending: true,
-        accommodations: [],
-        error: null
-      }
-    )
-  })
 
   it('Should handle FETCH_ACCOMMODATIONS_SUCCESS', () => {
     expect(fetchAccommodationsReducer(undefined, {

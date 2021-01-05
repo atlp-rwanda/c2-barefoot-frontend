@@ -1,5 +1,9 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Typography, makeStyles, Box, Divider, Grid, Container} from '@material-ui/core'
+import { connect } from 'react-redux'
+import { getLocations } from '../../../redux/actions/fetchLocationsAction'
+import { getAccommodations } from '../../../redux/actions/fetchAccommodations'
+import { Skeleton } from '@material-ui/lab'
 
 const useStyles = makeStyles((theme) => ({
   root:{
@@ -20,7 +24,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function Home () {
+function Home (props) {
+
+  useEffect(() => {
+    props.getLocations()
+    props.getAccommodations()
+  })
+
+  const skeletonData = (<Skeleton variant='text' width='100%'/>)
+
   const classes = useStyles()
   return(
     <Container className={classes.root}>
@@ -49,13 +61,13 @@ function Home () {
         <Divider orientation='vertical' flexItem />
         <Grid item xs={4} sm={4} md={2}>
           <Typography>
-            0 Locations
+          {props.locationsData.pending ? skeletonData : `${props.locationsData.locations.count} Locations`}
           </Typography>
         </Grid>
         <Divider orientation='vertical' flexItem />
         <Grid item xs={4} sm={4} md={2}>
           <Typography>
-            0 Accommodations
+          {props.accommodationsData.pending ? skeletonData : `${props.accommodationsData.accommodations.count} Accommodations`}
           </Typography>
         </Grid>
       </Grid>
@@ -65,5 +77,9 @@ function Home () {
   )
 
 }
+const mapStateToProps = state => ({
+  locationsData: state.fetchLocations,
+  accommodationsData: state.fetchAccommodations
+})
 
-export default Home
+export default connect(mapStateToProps,{getLocations, getAccommodations})(Home)

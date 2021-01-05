@@ -32,8 +32,7 @@ describe('Fetch Location actions', () => {
 
     return store.dispatch(actions.getLocations()).then(() => {
       const expectedActions = store.getActions();
-      expect(expectedActions[0].type).toEqual('FETCH_LOCATIONS_PENDING')
-      expect(expectedActions[1].type).toEqual('FETCH_LOCATIONS_SUCCESS')
+      expect(expectedActions[0].type).toEqual('FETCH_LOCATIONS_SUCCESS')
     })
   })
 
@@ -51,8 +50,7 @@ describe('Fetch Location actions', () => {
 
     return store.dispatch(actions.getLocations()).then(() => {
       const expectedActions = store.getActions();
-      expect(expectedActions[0].type).toEqual('FETCH_LOCATIONS_PENDING')
-      expect(expectedActions[1].type).toEqual('FETCH_LOCATIONS_ERROR')
+      expect(expectedActions[0].type).toEqual('FETCH_LOCATIONS_ERROR')
     })
   })
 
