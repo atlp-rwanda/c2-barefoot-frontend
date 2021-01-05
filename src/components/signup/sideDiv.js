@@ -76,7 +76,7 @@ function SideDiv({loading}){
                 </Box>
             ) : (
                 <div className={classes.img}>
-                    <img className={classes.locationImg} src={'../public/images/location.png'} alt='Barefoot Nomards'/>
+                    <img className={classes.locationImg} src={'https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609407601/images/location_goruvq.png'} alt='Barefoot Nomards'/>
                 </div>
             )}
         </div>

@@ -469,7 +469,7 @@ exports[`Signup Signup Rendering renders side div correctly 1`] = `
     <img
       alt="Barefoot Nomards"
       className="makeStyles-locationImg-20"
-      src="../public/images/location.png"
+      src="https://res.cloudinary.com/barefoot-nomad-app/image/upload/v1609407601/images/location_goruvq.png"
     />
   </div>
 </div>

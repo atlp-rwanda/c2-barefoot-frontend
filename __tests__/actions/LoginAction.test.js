@@ -15,7 +15,7 @@ describe('loginStore(creds)', () =>{
     });
 
     it('dispatches USER_LOGIN after login success', () =>{
-        mock.onPost(process.env.BACKEND_LINK+'/user/login')
+        mock.onPost(process.env.REACT_APP_BACKEND_LINK+'/user/login')
         .reply(200, {response:{data:{data:'success login'}}});
         store.dispatch(loginAction({email:'test@test.test', password:'test12345678'})).then(()=>{
             let expectedActions =[

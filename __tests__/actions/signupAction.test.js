@@ -72,7 +72,7 @@ describe('signupStore(creds)', () =>{
   });
 
   it('dispatches REQUEST_SIGNUP after signup success', () =>{
-      mock.onPost(process.env.BACKEND_LINK+'/user/signup')
+      mock.onPost(process.env.REACT_APP_BACKEND_LINK+'/user/signup')
       .reply(200, {response:{data:{data:'User M has been created. Check email for verification'}}});
       store.dispatch(actions.requestSignup(user)).then(()=>{
           let expectedActions =[
