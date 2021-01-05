@@ -3,6 +3,8 @@ import {Typography, makeStyles, Box, Divider, Grid, Container} from '@material-u
 import { connect } from 'react-redux'
 import { getLocations } from '../../../redux/actions/fetchLocationsAction'
 import { getAccommodations } from '../../../redux/actions/fetchAccommodations'
+import { getUsers } from '../../../redux/actions/fetchUsersAction'
+import { getRoles } from '../../../redux/actions/fetchRolesAction'
 import { Skeleton } from '@material-ui/lab'
 
 const useStyles = makeStyles((theme) => ({
@@ -27,9 +29,11 @@ const useStyles = makeStyles((theme) => ({
 function Home (props) {
 
   useEffect(() => {
+    props.getRoles()
+    props.getUsers()
     props.getLocations()
     props.getAccommodations()
-  })
+  }, [])
 
   const skeletonData = (<Skeleton variant='text' width='100%'/>)
 
@@ -49,13 +53,13 @@ function Home (props) {
         alignItems='center'>
         <Grid item xs={4} sm={4} md={2}>
           <Typography>
-            0 Roles
+          {props.rolesData.pending ? skeletonData : `${props.rolesData.roles.count} Roles`}
           </Typography>
         </Grid>
         <Divider orientation='vertical' flexItem />
         <Grid item xs={4} sm={4} md={2}>
           <Typography>
-            0 users
+          {props.usersData.pending ? skeletonData : `${props.usersData.users.count} Users`}
           </Typography>
         </Grid>
         <Divider orientation='vertical' flexItem />
@@ -79,7 +83,9 @@ function Home (props) {
 }
 const mapStateToProps = state => ({
   locationsData: state.fetchLocations,
-  accommodationsData: state.fetchAccommodations
+  accommodationsData: state.fetchAccommodations,
+  usersData: state.users,
+  rolesData: state.roles
 })
 
-export default connect(mapStateToProps,{getLocations, getAccommodations})(Home)
+export default connect(mapStateToProps,{getLocations, getAccommodations, getUsers, getRoles})(Home)
