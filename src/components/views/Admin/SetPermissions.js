@@ -1,26 +1,64 @@
-import React from 'react'
-import {Typography, makeStyles, Box, Divider, Container} from '@material-ui/core'
+import React, {useEffect} from 'react'
+import {Typography, makeStyles, Box, Divider, Grid, CssBaseline} from '@material-ui/core'
+import { connect } from 'react-redux'
+import { getRoles } from '../../../redux/actions/fetchRolesAction'
+import { Skeleton } from '@material-ui/lab'
+import RolesCard from '../../rolesCard'
 
 const useStyles = makeStyles((theme) => ({
  root: {
-   display: 'flex',
-   flexDirection: 'column',
-   alignContent: 'center',
-   justifyContent: 'center'
+   height: '90vh'
  }
 }))
 
-function SetPermissions(){
+const skeletonData = (<Grid item sm={8} xs={10} spacing={4}><RolesCard/></Grid>)
+
+function SetPermissions(props){
+  useEffect(() => {
+    props.getRoles()
+  }, [])
+
   const classes = useStyles()
+
   return(
-    <Container className={classes.root}>
-      <Box>
-        <Typography variant='h5' >Allow users to perform their operations</Typography>
-        <Divider/>
-      </Box>
-    </Container>
-    
+    <>
+      <Grid 
+      container 
+      component='main' 
+      justify='center'
+      spacing={4}
+      >
+        <CssBaseline/>
+
+        <Grid item sm={4} xs={12} justify='center' className={classes.root} spacing={2}>
+          <Box>
+            <Typography variant='h5' align='center'>Created Roles</Typography>
+            <Divider/>
+          </Box>
+          <Grid container justify='center' spacing={2}>
+
+            {props.savedRoles.pending ? skeletonData : props.savedRoles.roles.rows.map(({id, name}) => (
+               <Grid item sm={8} xs={10}>
+               <RolesCard roleTitle={name}/>
+             </Grid>
+            ))}
+           
+          </Grid>
+        </Grid>
+        <Divider orientation='vertical'/>
+        <Grid item sm={4} xs={12}>
+          <Box>
+            <Typography variant='h5' align='center'>Permissions</Typography>
+            <Divider/>
+          </Box>
+        </Grid>
+      </Grid>
+    </>
   )
 }
 
-export default SetPermissions;
+const mapStateToProps = state =>({
+  savedRoles: state.roles
+})
+
+export default  connect(mapStateToProps, {getRoles})(SetPermissions);

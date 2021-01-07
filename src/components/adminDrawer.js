@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import { makeStyles, Drawer, List, Divider, ListItem, ListItemIcon, ListItemText, IconButton, Box, Avatar, Typography} from '@material-ui/core';
-import { PlusOne, Home, People, Delete, Settings, Menu, AccountCircle } from '@material-ui/icons'
+import { makeStyles, Drawer, List, Divider, ListItem, ListItemIcon, ListItemText, IconButton, Box, Avatar, Typography, Collapse} from '@material-ui/core';
+import { PlusOne, Home, People, Delete, Settings, Menu, AccountCircle, ExpandLess, ExpandMore } from '@material-ui/icons'
 import { Link } from 'react-router-dom'
 
 
@@ -28,17 +28,23 @@ const useStyles = makeStyles(theme => ({
   },
   listIcons: {
     color: theme.palette.primary.main,
-  }
+  },
+  nested: {
+    paddingLeft: theme.spacing(4),
+    textDecoration: `none`,
+    color: 'black'
+    
+  },
 }));
 
 export default function TemporaryDrawer() {
   const classes = useStyles();
   const [state, setState] = useState({left: false});
+  const [drop, setDrop] = React.useState(false);
 
   const firstLinks = [
-    {title: 'Home', path: '/admin', icon: <Home className={classes.listIcons}/>},
-    {title: 'Create Roles', path: '/admin/roles', icon: <PlusOne className={classes.listIcons}/>},
-    {title: 'Set permissions', path:'/admin/permissions', icon: <Settings className={classes.listIcons} />}
+    {title: 'Create Roles', path: '/admin/roles'},
+    {title: 'Set permissions', path:'/admin/permissions'}
   ]
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -48,6 +54,10 @@ export default function TemporaryDrawer() {
 
     setState({ [anchor]: open });
   };
+
+  const handleClick = () => {
+    setDrop(!drop)
+  }
 
   const list = (anchor) => (
     <div
@@ -64,14 +74,29 @@ export default function TemporaryDrawer() {
       </Box>
       <Divider/>
       <List>
-        {firstLinks.map(({title, path, icon}) => (
-          <Link to={path} key={title} className={classes.linkText} >
+          <Link to='/admin' key='Home' className={classes.linkText} >
             <ListItem button>
-              <ListItemIcon> {icon} </ListItemIcon>
-              <ListItemText primary={title} />
+              <ListItemIcon> <Home className={classes.listIcons}/> </ListItemIcon>
+              <ListItemText primary='Home' />
             </ListItem>
           </Link>
-        ))}
+
+            <ListItem button onClick={handleClick}>
+              <ListItemIcon> <Settings className={classes.listIcons} /> </ListItemIcon>
+              <ListItemText primary='ROLES' />
+              {drop ? <ExpandLess/> : <ExpandMore/>}
+            </ListItem>
+            <Collapse in={drop} timeout='auto' unmountOnExit>
+              <List component='div' disablePadding>
+                {firstLinks.map(({title, path}) => (
+                  <Link to={path} key={title} className={classes.nested}>
+                    <ListItem button >
+                      <ListItemText primary={title}/>
+                    </ListItem>
+                  </Link>
+                ))}
+              </List>
+            </Collapse>
       </List>
       <Divider/>
       <List>

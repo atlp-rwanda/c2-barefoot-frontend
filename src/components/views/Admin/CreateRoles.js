@@ -12,7 +12,6 @@ const initialValues = {
   role: '',
   description: ''
 }
-
 //form validation with yup
 const roleForm = Yup.object().shape({
   role: Yup.string().required('The role name is required'),
@@ -44,8 +43,10 @@ const useStyles = makeStyles((theme) => ({
 function CreateRoles (props) {
   const classes = useStyles()
 
-  const handleSubmition = (payload) => {
+  const handleSubmition = (payload, {resetForm}) => {
     props.createRoleAction(payload)
+    resetForm({payload: ''})
+
     
   }
 
@@ -62,7 +63,6 @@ function CreateRoles (props) {
   return(
     <Grid 
     container 
-    className={classes.root}
     justify='center'
     >
       <CssBaseline/>
@@ -102,7 +102,7 @@ function CreateRoles (props) {
                   fullWidth 
                   autoFocus
                   required
-                  disables={load}
+                  disabled={load}
                   />
                   {errors.role && touched.role ? (<div style={{textAlign: 'left', color:'red'}}>{errors.role}</div>) : null}
                 </FormGroup>
