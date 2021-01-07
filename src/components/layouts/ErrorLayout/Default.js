@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
-import AdminNavBar from '../../AdminNavbar'
-import Footer from '../../Footer'
+
+import NavBar from '../../NavBar'
 
 
-const useStyles = makeStyles((theme) => ({
-  toolbar: theme.mixins.toolbar,
+
+const useStyles = makeStyles(() => ({
+  
   content: {
-    height: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
+    height: '100vh'
   }
 }));
 
@@ -19,12 +18,10 @@ const DefaultM = props => {
   const classes = useStyles();
   return (
     <div >
-      <AdminNavBar/>
-      <div className={classes.toolbar} />
-      <main className={classes.content}>
-        {children}
+      <NavBar />
+      <main className={classes.content}>{children}
+      
       </main>
-      <Footer/>
     </div>
   );
 };

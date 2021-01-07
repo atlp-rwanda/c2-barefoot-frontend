@@ -3,7 +3,7 @@ import {Box, makeStyles, Typography} from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   box: {
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.primary.main,
     height: '100vh',
     color: "#fff",
     display: 'flex',
@@ -13,17 +13,17 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-function PageNotFound (){
+function Unauthorized (){
   const classes = useStyles();
 
   return(
     <React.Fragment>
       <Box className={classes.box}>
-        <Typography variant='h1' >404</Typography>
-        <Typography variant='h4' >Page Not Found :(</Typography>
+        <Typography variant='h1' >401</Typography>
+        <Typography variant='h4' >Unauthorized :(</Typography>
       </Box>
     </React.Fragment>
   )
 }
 
-export default PageNotFound
+export default Unauthorized

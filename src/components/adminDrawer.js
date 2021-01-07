@@ -36,9 +36,9 @@ export default function TemporaryDrawer() {
   const [state, setState] = useState({left: false});
 
   const firstLinks = [
-    {title: 'Home', path: '/adminHome', icon: <Home className={classes.listIcons}/>},
-    {title: 'Create Roles', path: '/roles', icon: <PlusOne className={classes.listIcons}/>},
-    {title: 'Set permissions', path:'/permissions', icon: <Settings className={classes.listIcons} />}
+    {title: 'Home', path: '/admin', icon: <Home className={classes.listIcons}/>},
+    {title: 'Create Roles', path: '/admin/roles', icon: <PlusOne className={classes.listIcons}/>},
+    {title: 'Set permissions', path:'/admin/permissions', icon: <Settings className={classes.listIcons} />}
   ]
 
   const toggleDrawer = (anchor, open) => (event) => {

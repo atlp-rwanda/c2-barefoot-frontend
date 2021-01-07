@@ -1,6 +1,6 @@
 import React from 'react'
 import { AppBar, Toolbar, Button, makeStyles, List, Box, Typography} from '@material-ui/core'
-import AdminDrawer from './adminDrawer'
+import AdminDrawer from './AdminDrawer'
 
 const useStyles = makeStyles(theme => ({
     navDisplay: {
