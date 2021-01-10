@@ -56,19 +56,19 @@ function Home (props) {
           {props.rolesData.pending ? skeletonData : `${props.rolesData.roles.count} Roles`}
           </Typography>
         </Grid>
-        <Divider orientation='vertical' flexItem />
+        <Divider orientation='vertical' flexItem variant='middle'/>
         <Grid item xs={4} sm={4} md={2}>
           <Typography>
           {props.usersData.pending ? skeletonData : `${props.usersData.users.count} Users`}
           </Typography>
         </Grid>
-        <Divider orientation='vertical' flexItem />
+        <Divider orientation='vertical' flexItem variant='middle'/>
         <Grid item xs={4} sm={4} md={2}>
           <Typography>
           {props.locationsData.pending ? skeletonData : `${props.locationsData.locations.count} Locations`}
           </Typography>
         </Grid>
-        <Divider orientation='vertical' flexItem />
+        <Divider orientation='vertical' flexItem variant='middle'/>
         <Grid item xs={4} sm={4} md={2}>
           <Typography>
           {props.accommodationsData.pending ? skeletonData : `${props.accommodationsData.accommodations.count} Accommodations`}

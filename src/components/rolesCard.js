@@ -3,7 +3,7 @@ import { Card, CardContent, Typography, CardActions, IconButton, makeStyles, Car
 import { Delete } from '@material-ui/icons'
 import {connect} from 'react-redux'
 import { Skeleton } from '@material-ui/lab'
-
+import { deleteRoleAction } from '../redux/actions/fetchRolesAction'
 const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',
@@ -14,6 +14,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 function RolesCard(props) {
+  const handleDelete = () => {
+    props.deleteRoleAction(props.idx, props.roleTitle)
+  }
   const classes = useStyles()
   return (
       <div className={classes.root}>
@@ -27,7 +30,7 @@ function RolesCard(props) {
 
           </CardActionArea>
           <CardActions>
-            <IconButton>
+            <IconButton onClick={handleDelete}>
               <Delete color='secondary'/>
             </IconButton>
           </CardActions>
@@ -40,4 +43,4 @@ const mapStateToProps = state => ({
   pending: state.roles.pending
 })
 
-export default connect(mapStateToProps, null)(RolesCard)
+export default connect(mapStateToProps, {deleteRoleAction})(RolesCard)

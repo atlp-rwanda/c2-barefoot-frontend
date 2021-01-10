@@ -9,6 +9,7 @@ import Profile from '../components/views/Profile';
 import adminHome from '../components/views/Admin/Home';
 import CreateRoles from '../components/views/Admin/CreateRoles';
 import SetPermissions from '../components/views/Admin/SetPermissions'
+import ListUsers from '../components/views/Admin/ListUsers'
 import { Switch, Redirect } from 'react-router-dom';
 import RouteWithLayout  from '../components/RouteWithLayout';
 import {  DefaultLayout, AuthorizedUserLayout, AdminLayout, ErrorLayout } from '../components/layouts';
@@ -57,6 +58,12 @@ const Routes = () => {
           exact
           layout={AdminLayout}
           path="/admin/permissions"
+        />
+        <RouteWithLayout
+          component={ListUsers}
+          exact
+          layout={AdminLayout}
+          path="/admin/users"
         />
         <RouteWithLayout
           component={Logout}
