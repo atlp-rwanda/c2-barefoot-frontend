@@ -31,7 +31,6 @@ export const getRoles = () => dispatch => {
 }
 
 export const deleteRoleAction = (payload, title) => dispatch => {
-  console.log(title)
   dispatch({
     type: DELETE_ROLE_PENDING
   })

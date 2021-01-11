@@ -4,7 +4,7 @@ import { Card, FormControl,TextField,  CardActionArea, CardActions, CardContent}
 import {CardMedia, Button, Typography, IconButton, Avatar, Modal} from '@material-ui/core';
 import { Delete, Email, Place, Language, Work, SupervisedUserCircle, AccountCircle } from '@material-ui/icons'
 import { connect } from 'react-redux'
-import { getUsers } from '../redux/actions/fetchUsersAction';
+import { getUsers, deleteUser } from '../redux/actions/UsersAction';
 import { Skeleton } from '@material-ui/lab';
 
 
@@ -71,6 +71,10 @@ function UserCard(props) {
     setOpen(false)
   }
 
+  const handleDelete = () => {
+    props.deleteUser(props.idx, props.UserData.email)
+  }
+
   const ProfileModal = (
       <Modal className={classes.modal} open={open} onClose={closeProfile}>
         <div className={classes.paper}>
@@ -97,7 +101,7 @@ function UserCard(props) {
           </div>
           <div className={classes.modalItems}>
             <Work />
-            <Typography>Software Enginner</Typography>
+            <Typography>Software Engineer</Typography>
           </div>
           <div className={classes.modalItems}>
             <SupervisedUserCircle />
@@ -140,7 +144,7 @@ function UserCard(props) {
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.actions}>
-        <IconButton>
+        <IconButton onClick={handleDelete}>
           <Delete color='secondary'/>
         </IconButton>
         <Button size="small" color="primary" onClick={openProfile}> Profile </Button>
@@ -154,4 +158,4 @@ const mapStateToProps = state => ({
   pending : state.users.pending
 })
 
-export default connect(mapStateToProps, {getUsers})(UserCard)
+export default connect(mapStateToProps, {getUsers, deleteUser})(UserCard)

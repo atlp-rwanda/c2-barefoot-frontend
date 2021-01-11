@@ -3,7 +3,7 @@ import {Typography, makeStyles, Box, Divider, Grid, Container} from '@material-u
 import { connect } from 'react-redux'
 import { getLocations } from '../../../redux/actions/fetchLocationsAction'
 import { getAccommodations } from '../../../redux/actions/fetchAccommodations'
-import { getUsers } from '../../../redux/actions/fetchUsersAction'
+import { getUsers } from '../../../redux/actions/UsersAction'
 import { getRoles } from '../../../redux/actions/fetchRolesAction'
 import { Skeleton } from '@material-ui/lab'
 
