@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react'
-import {Typography, makeStyles, Slide, Box, Snackbar, Divider, Grid, CssBaseline, FormGroup, Checkbox, FormControlLabel, TextField} from '@material-ui/core'
+import React, {useEffect, useState} from 'react'
+import {Typography, makeStyles, Slide, Box, Snackbar, Divider, Grid, CssBaseline, Checkbox, FormControlLabel, TextField, FormGroup, Button} from '@material-ui/core'
 import { connect } from 'react-redux'
 import { getRoles, clearSnackBar } from '../../../redux/actions/fetchRolesAction'
 import RolesCard from '../../rolesCard'
 import Loader from '../../Loader'
 import {Alert} from '@material-ui/lab';
-
+import { changePermission } from '../../../redux/actions/fetchPermissions'
 
 const useStyles = makeStyles((theme) => ({
  root: {
@@ -32,6 +32,19 @@ function SetPermissions(props){
     props.clearSnackBar()
   }
 
+  const handleCheckBox = (event) => {
+    let allowed = event.target.checked ? 1 : 0
+    const changed = [event.target.name, allowed]
+    const index = event.target.id
+    props.changePermission(index, changed)
+  }
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log(payload)
+  }
+
   return(
     <>
       <Grid 
@@ -43,7 +56,7 @@ function SetPermissions(props){
         <CssBaseline/>
 
         <Loader open={load}/>
-
+        <Loader open={props.permissions.pending}/>
         <Snackbar
         open={props.savedRoles.snackBarMessage.open}
         onClose={closeSnackBarTimer}
@@ -85,84 +98,18 @@ function SetPermissions(props){
             <Divider/>
           </Box>
           <Grid container justify='center'>
-            <form>
+            <form onSubmit = {handleSubmit}>
               <FormGroup>
-                <FormControlLabel
-                control={<Checkbox  name='Edit Profile' />}
-                label='Edit Profile'
-                />
-              </FormGroup>
-              <FormGroup>
-                <FormControlLabel
-                control={<Checkbox/>}
-                label='Assign requesters to manager'
-                />
-                <FormControlLabel
-                control={<Checkbox/>}
-                label='Create travel requests'
-                />
-                <FormControlLabel
-                control={<Checkbox/>}
-                label='View travel requests'
-                />
-                <FormControlLabel
-                control={<Checkbox/>}
-                label='Edit travel requests'
-                />
-                <FormControlLabel
-                control={<Checkbox/>}
-                label='Cancel travel requests'
-                />
-              </FormGroup>
-              <FormGroup>
-              <FormControlLabel
-              control={<Checkbox/>}
-              label='Approve direct reports travel requests'
-              />
-              <FormControlLabel
-              control={<Checkbox/>}
-              label='View direct reports travel requests'
-              />
-              <FormControlLabel
-              control={<Checkbox/>}
-              label='Reject direct reports travel requests'
-              />
-              </FormGroup>
-              <FormGroup>
-                <FormControlLabel
-                control={<Checkbox/>}
-                label='Create accommodations'
-                />
-                <FormControlLabel
-                control={<Checkbox/>}
-                label='Update accommodations'
-                />
-                <FormControlLabel
-                control={<Checkbox/>}
-                label='Delete accommodations'
-                />
-                <FormControlLabel
-                control={<Checkbox/>}
-                label='Book accommodations'
-                />
-              </FormGroup>
-              <FormGroup>
+                {props.permissions && props.permissions.permissions.map(([name, allowed], index) => (
                   <FormControlLabel
-                  control={<Checkbox/>}
-                  label='Create locations'
-                  />
-                  <FormControlLabel
-                  control={<Checkbox/>}
-                  label='Update locations'
-                  />
-                  <FormControlLabel
-                  control={<Checkbox/>}
-                  label='Delete locations'
-                  />
+                  key={name}
+                  control={<Checkbox checked={allowed ? true : false}  name={name} id={index}  onChange={handleCheckBox} />}
+                  label={name}
+                />))}
               </FormGroup>
+              <Button variant='contained' size='medium' color='primary' type="submit" disabled={load}>Save</Button>
             </form>    
           </Grid>
-          
         </Grid>
       </Grid>
     </>
@@ -170,7 +117,8 @@ function SetPermissions(props){
 }
 
 const mapStateToProps = state =>({
-  savedRoles: state.roles
+  savedRoles: state.roles,
+  permissions: state.permissions
 })
 
-export default  connect(mapStateToProps, {getRoles, clearSnackBar})(SetPermissions);
+export default  connect(mapStateToProps, {getRoles, clearSnackBar, changePermission})(SetPermissions);

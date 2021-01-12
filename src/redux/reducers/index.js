@@ -7,6 +7,8 @@ import { logoutReducer } from './logoutReducer';
 import { UsersReducer } from './usersReducer'
 import { RolesReducer } from './rolesReducer'
 import { createRoles } from './createRoleReducer'
+import { permissionsReducer } from './permissionsReducer'
+
 const reducers = combineReducers({
   logout: logoutReducer,
   login: loginReducer,
@@ -15,7 +17,8 @@ const reducers = combineReducers({
   fetchAccommodations: fetchAccommodationsReducer,
   users: UsersReducer,
   roles: RolesReducer,
-  createRoles
+  permissions: permissionsReducer,
+  createRoles,
   
 })
 
