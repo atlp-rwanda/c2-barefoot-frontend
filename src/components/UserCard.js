@@ -1,12 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, FormControl,TextField,  CardActionArea, CardActions, CardContent} from '@material-ui/core';
-import {CardMedia, Button, Typography, IconButton, Avatar, Modal} from '@material-ui/core';
+import { Card, FormControl,TextField,  CardActionArea, CardActions, CardContent, Grid, Select, FormHelperText} from '@material-ui/core';
+import {CardMedia, Button, Typography, IconButton, Avatar, Modal, MenuItem, InputLabel} from '@material-ui/core';
 import { Delete, Email, Place, Language, Work, SupervisedUserCircle, AccountCircle } from '@material-ui/icons'
 import { connect } from 'react-redux'
 import { getUsers, deleteUser } from '../redux/actions/UsersAction';
 import { Skeleton } from '@material-ui/lab';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -120,7 +119,7 @@ function UserCard(props) {
         :
         (<CardMedia
           className={classes.media}
-          image='https://i.ibb.co/MGMCsqm/profile-Picture.png'
+          image={props.UserData.profile_picture}
         />)}
         <CardContent className={classes.cardContent}>
           <Typography gutterBottom variant="subtitle1">
@@ -129,17 +128,22 @@ function UserCard(props) {
             (props.UserData.first_name)+ " "+ (props.UserData.last_name)}
           </Typography>
           <FormControl>
-            <TextField
-            select
+            <InputLabel id='role_id'>{props.UserData && props.UserData.user_role.name}</InputLabel>
+            <Select
+            labelId='role_id'
             id='role'
-            label='assign role'
-            />
+            >
+              {props.rolesList.pending ? (<Skeleton width='100%'/>) : props.rolesList.roles.rows.map((roles) => (
+                <MenuItem value={roles.name}>{roles.name}</MenuItem>
+              ))}
+            </Select>
+            <FormHelperText>User Role</FormHelperText>
           </FormControl>
           <FormControl>
-            <TextField
-            select
+            <Select
             label = 'assign line manager'
             />
+            <FormHelperText>Line Manager</FormHelperText>
           </FormControl>
         </CardContent>
       </CardActionArea>
@@ -155,7 +159,8 @@ function UserCard(props) {
 }
 
 const mapStateToProps = state => ({
-  pending : state.users.pending
+  pending : state.users.pending,
+  rolesList: state.roles
 })
 
 export default connect(mapStateToProps, {getUsers, deleteUser})(UserCard)

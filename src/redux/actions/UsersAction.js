@@ -15,7 +15,7 @@ export const getUsers = (page) => dispatch => {
   dispatch({
     type: FETCH_USERS_PENDING
   })
-  return axios.get(`${process.env.REACT_APP_BACKEND_LINK}/admin/users`, {
+  return axios.get(`${process.env.REACT_APP_BACKEND_LINK}/assignUserstoManager/verified-users`, {
     headers: {
       Authorization: `Bearer ${token}`
     },
@@ -26,7 +26,7 @@ export const getUsers = (page) => dispatch => {
     .then(res => {
       dispatch({
         type: FETCH_USERS_SUCCESS,
-        payload: res.data.users
+        payload: res.data.verifiedUsers
       })
       }
     )

@@ -1,4 +1,5 @@
-import {FETCH_ROLES_SUCCESS, FETCH_ROLES_ERROR, DELETE_ROLE_SUCCESS, DELETE_ROLE_PENDING, DELETE_ROLE_ERROR, CLEAR_SNACKBAR} from '../actions/fetchRolesAction'
+import {FETCH_ROLES_SUCCESS, FETCH_ROLES_ERROR} from '../actions/fetchRolesAction'
+import {DELETE_ROLE_SUCCESS, DELETE_ROLE_PENDING, DELETE_ROLE_ERROR, CLEAR_SNACKBAR} from '../actions/fetchRolesAction'
 
 const initialState = {
   pending: true,

@@ -4,7 +4,7 @@ import { Delete } from '@material-ui/icons'
 import {connect} from 'react-redux'
 import { Skeleton } from '@material-ui/lab'
 import { deleteRoleAction } from '../redux/actions/fetchRolesAction'
-import { getPermissions } from '../redux/actions/fetchPermissions'
+import { getPermissions } from '../redux/actions/PermissionsAction'
 const useStyles = makeStyles((theme) => ({
   card: {
     display: 'flex',

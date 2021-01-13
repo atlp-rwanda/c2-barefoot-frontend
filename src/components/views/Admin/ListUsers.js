@@ -1,10 +1,12 @@
 import React, {useEffect} from 'react'
-import { Divider, Grid, Typography, makeStyles, Snackbar, Slide } from '@material-ui/core'
+import { Divider, Grid, Typography, makeStyles, Snackbar, Slide, Button } from '@material-ui/core'
 import { connect } from 'react-redux'
 import { getUsers, clearSnackBar } from '../../../redux/actions/UsersAction'
 import UserCard from '../../UserCard'
 import Loader from '../../Loader'
 import { Pagination, Alert } from '@material-ui/lab'
+import { getRoles } from '../../../redux/actions/fetchRolesAction'
+
 
 const useStyles = makeStyles((theme) => ({
   pagination:{
@@ -17,8 +19,10 @@ const skeletonData = (<Grid item sm={8} xs={10}><UserCard/></Grid>)
 
 function ListUsers(props) {
   const classes = useStyles()
+
   useEffect(() => {
     props.getUsers()
+    props.getRoles()
   }, [])
 
   const load = props.usersData.load
@@ -81,4 +85,4 @@ const mapStateToProps = state => ({
   usersData: state.users
 })
 
-export default connect(mapStateToProps, {getUsers, clearSnackBar})(ListUsers)
+export default connect(mapStateToProps, {getUsers, clearSnackBar, getRoles})(ListUsers)
