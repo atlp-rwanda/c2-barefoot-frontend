@@ -1,6 +1,6 @@
-import React from 'react';
+import React , {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, FormControl,TextField,  CardActionArea, CardActions, CardContent, Grid, Select, FormHelperText} from '@material-ui/core';
+import { Card, FormControl,CardActionArea, CardActions, CardContent, Grid, Select, FormHelperText} from '@material-ui/core';
 import {CardMedia, Button, Typography, IconButton, Avatar, Modal, MenuItem, InputLabel} from '@material-ui/core';
 import { Delete, Email, Place, Language, Work, SupervisedUserCircle, AccountCircle } from '@material-ui/icons'
 import { connect } from 'react-redux'
@@ -24,8 +24,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between'
   },
   cardContent: {
-    display: 'flex',
-    flexDirection: 'column',
+    
     color: '#43A0D6'
   },
   modal: {
@@ -49,8 +48,11 @@ const useStyles = makeStyles((theme) => ({
   modalItems: {
     display: "flex",
     justifyContent: 'center'
-    
-    
+      
+  },
+  formConternt: {
+    display: 'flex',
+    flexDirection: 'column',
   }
   
 }));
@@ -72,6 +74,18 @@ function UserCard(props) {
 
   const handleDelete = () => {
     props.deleteUser(props.idx, props.UserData.email)
+  }
+
+  
+
+  const handleSubmit = () => {
+
+  }
+
+  const [role, setRole] = useState(props.UserData && props.UserData.user_role.name)
+
+  const handleChange = (e) => {
+    setRole(e.target.value)
   }
 
   const ProfileModal = (
@@ -112,7 +126,7 @@ function UserCard(props) {
 
   
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} key={props.UserData && props.UserData.id}>
       <CardActionArea>
         {props.pending ? 
         (<Skeleton variant='rect' className={classes.media} />)
@@ -127,24 +141,32 @@ function UserCard(props) {
             :
             (props.UserData.first_name)+ " "+ (props.UserData.last_name)}
           </Typography>
+          <form className={classes.formConternt}>
           <FormControl>
-            <InputLabel id='role_id'>{props.UserData && props.UserData.user_role.name}</InputLabel>
+
             <Select
-            labelId='role_id'
             id='role'
+            onChange={handleChange}
+            value={props.UserData && props.UserData.user_role.name}
             >
               {props.rolesList.pending ? (<Skeleton width='100%'/>) : props.rolesList.roles.rows.map((roles) => (
-                <MenuItem value={roles.name}>{roles.name}</MenuItem>
+              <MenuItem value={roles.name} key={roles.id}>{roles.name}</MenuItem>
               ))}
             </Select>
             <FormHelperText>User Role</FormHelperText>
           </FormControl>
           <FormControl>
+            <InputLabel id='manager_id'>{ props.UserData && (props.UserData.line_manager ? props.UserData.line_manager.first_name + " " + props.UserData.line_manager.last_name: 'None')}</InputLabel>
             <Select
-            label = 'assign line manager'
-            />
+            labelId='manager_id'
+            >
+            {props.managers.pending ? (<Skeleton width='100%'/>) : props.managers.managers.rows.map((manager) => (
+              <MenuItem value={manager.username} key={manager.id}>{manager.first_name} {manager.last_name}</MenuItem>
+            ))}
+            </Select>
             <FormHelperText>Line Manager</FormHelperText>
           </FormControl>
+          </form>
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.actions}>
@@ -160,7 +182,8 @@ function UserCard(props) {
 
 const mapStateToProps = state => ({
   pending : state.users.pending,
-  rolesList: state.roles
+  rolesList: state.roles,
+  managers: state.managerReducer
 })
 
 export default connect(mapStateToProps, {getUsers, deleteUser})(UserCard)

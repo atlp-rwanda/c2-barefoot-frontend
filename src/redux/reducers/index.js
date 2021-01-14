@@ -8,6 +8,8 @@ import { UsersReducer } from './usersReducer'
 import { RolesReducer } from './rolesReducer'
 import { createRoles } from './createRoleReducer'
 import { permissionsReducer } from './permissionsReducer'
+import {managerReducer} from './managersReducer'
+
 const reducers = combineReducers({
   logout: logoutReducer,
   login: loginReducer,
@@ -18,6 +20,7 @@ const reducers = combineReducers({
   roles: RolesReducer,
   permissions: permissionsReducer,
   createRoles,
+  managerReducer
   
 })
 
