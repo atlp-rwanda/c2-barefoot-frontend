@@ -17,6 +17,7 @@ export function fetchLocationsReducer(state = initialState, action){
       return {
         ...state,
         pending: false,
+        count: action.count,
         locations: action.payload
       }
     case FETCH_LOCATIONS_ERROR:

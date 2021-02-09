@@ -10,6 +10,14 @@ import Landing from '../components/views/LandingPage'
 import PageNotFound from '../components/views/PageNotFound'
 import { Switch, Redirect } from 'react-router-dom';
 import RouteWithLayout  from '../components/RouteWithLayout';
+import TravelAdminDefault  from '../components/travelAdminLayoutRoute/Default';
+import { createLocation } from '../components/views/travelAdmin/createLocations';
+import { createAccomodations } from '../components/views/travelAdmin/createAccommodations';
+import TravelAdmin from '../components/views/travelAdmin';
+import TravelAdminRoute from '../components/travelAdminLayoutRoute';
+import ListLocations from '../components/views/travelAdmin/viewLocations';
+import ListAccommodation from '../components/views/travelAdmin/viewAccommodations';
+// import { redirectUser, toBeRedirected } from '../../../services/userInfo';
 import Profile from '../components/views/Profile';
 import {  DefaultLayout, AuthorizedUserLayout } from '../components/layouts';
 import Logout from '../components/views/Logout';
@@ -84,6 +92,32 @@ const Routes = () => {
             path="/user/verification/" 
             component={ verifyAccount }
             layout={DefaultLayout}
+        />
+        <RouteWithLayout 
+            path="/admin/travel" 
+            exact
+            component={ TravelAdmin }
+            layout={TravelAdminDefault}
+        />
+        <RouteWithLayout 
+            path="/admin/travel/location/create" 
+            component={ createLocation }
+            layout={TravelAdminDefault}
+        />
+        <RouteWithLayout 
+            path="/admin/travel/location/view" 
+            component={ ListLocations }
+            layout={TravelAdminDefault}
+        />
+        <RouteWithLayout 
+            path="/admin/travel/accommodations/create" 
+            component={ createAccomodations }
+            layout={TravelAdminDefault}
+        />
+        <RouteWithLayout 
+            path="/admin/travel/accommodations/view" 
+            component={ ListAccommodation }
+            layout={TravelAdminDefault}
         />
         
         <Redirect to="/PageNotFound" />

@@ -1,13 +1,8 @@
 import React from 'react'
-import { AppBar, Toolbar, Button, makeStyles, List, Container, Hidden, Typography} from '@material-ui/core'
-import {PersonAddOutlined, PersonOutlined} from '@material-ui/icons'
+import { AppBar, Toolbar, Button, makeStyles, List, Container, Hidden, Typography, Box} from '@material-ui/core'
+import {Lock, PersonAddOutlined, PersonOutlined} from '@material-ui/icons'
 import SideDrawer from './SideDrawer'
 
-
-const navLinks = [
-    {title: 'Login', path: '/login'},
-    {title: 'Signup', path: '/signup'}
-]
 
 const useStyles = makeStyles(theme => ({
     navDisplay: {
@@ -30,16 +25,17 @@ function Header (){
     return (
         <Toolbar>
             <Container maxWidth='lg' className={classes.navDisplay}>
-                {barefootLogo}
+                <Box>
+                    <SideDrawer />
+                    {barefootLogo}
+                </Box>
                 <Hidden smDown>
                     <List component='nav'>
-                        <Button href="/login" color='inherit' startIcon={ <PersonOutlined/> }>Login</Button>
-                        <Button href="/signup" color='inherit' startIcon = { <PersonAddOutlined/> }>Signup</Button>
+                        <Button href="/profile" color='inherit' startIcon={ <PersonOutlined/> }>Profile</Button>
+                        <Button href="/logout" color='inherit' startIcon = { <Lock/> }>Logout</Button>
                     </List>
                 </Hidden>
-                <Hidden mdUp>
-                    <SideDrawer navLinks={navLinks}/>
-                </Hidden>
+                
             </Container>
         </Toolbar>
         )

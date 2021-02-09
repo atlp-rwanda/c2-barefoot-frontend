@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { AppBar, Toolbar, Button, makeStyles, List, Container, Hidden, Typography} from '@material-ui/core'
 import LockIcon from '@material-ui/icons/Lock';
 import SideDrawer from './SideDrawer'
+import { isAdmin, redirectUser } from '../services/userInfo'
+import { Security } from '@material-ui/icons';
 
 const navLinks = [
     {title: 'Logout', path: '/logout'}
@@ -21,6 +23,10 @@ const useStyles = makeStyles(theme => ({
 
 function Header (){
     const classes = useStyles()
+    const [admin,setAdmin] = useState(false)
+    useEffect(()=>{
+        setAdmin(isAdmin())
+    })
 
     const barefootLogo = <Typography href='/welcome' variant='h6'component='a' className={classes.logo}> Barefoot Nomad </Typography>
 
@@ -31,6 +37,12 @@ function Header (){
                 {barefootLogo}
                 <Hidden smDown>
                     <List component='nav'>
+                        {
+                            admin
+                            ? <Button onClick={redirectUser} color='inherit' startIcon={ <Security/> }>Manage</Button>
+                            : null
+                        }
+                        
                         <Button href="/logout" color='inherit' startIcon = { <LockIcon/> }>Logout</Button>
                     </List>
                 </Hidden>
