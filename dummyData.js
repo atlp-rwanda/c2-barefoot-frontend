@@ -31,10 +31,30 @@ export const locationsPayload = [
 export const accommodationsPayload = [
     {
       
-        id: "0ce36391-2c08-3074-bddb-a4ea8cccbbc5",
+        id: "1ce36391-2c08-3074-bddb-a4ea8cccbbc5",
         country: "Rwanda",
         city: "Kigali",
         title: "Marriot Hotel",
+        description: "A serene environment for relaxation",
+        photos: "https://cache.marriott.com/marriottassets/marriott/KGLMC/kglmc-exterior-0030-hor-feat.jpg",
+    
+    },
+    {
+      
+        id: "2ce36391-2c08-3074-bddb-a4ea8cccbbc5",
+        country: "Rwanda",
+        city: "Kicukiro",
+        title: "Kicukiro Hotel",
+        description: "A serene environment for relaxation",
+        photos: "https://cache.marriott.com/marriottassets/marriott/KGLMC/kglmc-exterior-0030-hor-feat.jpg",
+    
+    },
+    {
+      
+        id: "3ce36391-2c08-3074-bddb-a4ea8cccbbc5",
+        country: "German",
+        city: "Berlin",
+        title: "Berlin Hotel",
         description: "A serene environment for relaxation",
         photos: "https://cache.marriott.com/marriottassets/marriott/KGLMC/kglmc-exterior-0030-hor-feat.jpg",
     
@@ -53,3 +73,45 @@ export const accommodationsPayload = [
     error: null
   }
 
+let a = 'https://barefoot-nomad-app-v1.herokuapp.com'
+export const props = {
+  CheckReturningAction : jest.fn(),
+  checkTravelDatesAction: jest.fn(),
+  getLocationsAction: jest.fn(),
+  searchCurrentLocationAction: jest.fn(),
+  selectAccommodationAction: jest.fn(),
+  handleErrorsAction:jest.fn(),
+  closeSnackbar: jest.fn(),
+  addTravelReasonAction: jest.fn(),
+  sendTravelRequestAction: jest.fn(),
+  addMultiCityAction: jest.fn(),
+  removeMultiCityAction: jest.fn(),
+  openModalAction: jest.fn(),
+}
+export const props2={
+  searchLocations: [],
+  searchLocationsLoading: false,
+  currentLocation: '',
+  destinationLocation: '',
+  isReturning: false,
+  departureDate: '',
+  returnDate: '',
+  searchAccommodations: [],
+  searchAccommodationsLoading:false,
+  selectedAccommodation:[],
+  selectedLocations:[],
+  displaySelection:false,
+  displaySelected: false,
+  snackBarMessage:{
+      open: false,
+      message: null,
+      severity: ''
+  },
+  success: false,
+  sendLoading:false,
+  travelReason: '',
+  Modal: {
+      open: false,
+      data:{}
+  }
+}
