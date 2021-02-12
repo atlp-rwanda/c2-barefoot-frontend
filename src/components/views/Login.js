@@ -63,7 +63,7 @@ function Login(props) {
     } 
 
     if(props.login.success){
-        props.history.push('/profile');
+        props.history.push('/managerTravel');
     }
 
     return(

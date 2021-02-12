@@ -11,9 +11,10 @@ import PageNotFound from '../components/views/PageNotFound'
 import { Switch, Redirect } from 'react-router-dom';
 import RouteWithLayout  from '../components/RouteWithLayout';
 import Profile from '../components/views/Profile';
-import {  DefaultLayout, AuthorizedUserLayout } from '../components/layouts';
+import {  DefaultLayout, AuthorizedUserLayout, ManagerLayout } from '../components/layouts';
 import Logout from '../components/views/Logout';
-
+// import ManagerDashboard from '../components/sideBarDrawer/ManagerDashboard';
+import ManagerTravelDashboard from '../components/manageTravel/manageTravelDashboard'
 const Routes = () => {
     return (
       <Switch>
@@ -40,6 +41,18 @@ const Routes = () => {
           layout={AuthorizedUserLayout}
           path="/profile"
         />
+        {/* <RouteWithLayout
+          component={ManagerDashboard}
+          exact
+          layout={ManagerLayout}
+          path="/managerDashboard"
+        /> */}
+        <RouteWithLayout
+          component={ManagerTravelDashboard}
+          exact
+          layout={ManagerLayout}
+          path="/managerTravel"
+        />
          <RouteWithLayout
           component={signup}
           exact
@@ -49,13 +62,13 @@ const Routes = () => {
         <RouteWithLayout
           component={ResetPasswordEmailForm}
           exact
-          layout={DefaultLayout}
+          layout={AuthorizedUserLayout}
           path="/forgetpassword"
         />
         <RouteWithLayout
           component={NewPassword}
           exact
-          layout={DefaultLayout}
+          layout={AuthorizedUserLayout}
           path="/user/reset-password"
         />
         <RouteWithLayout
